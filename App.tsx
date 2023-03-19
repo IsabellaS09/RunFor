@@ -1,12 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Box, Heading, HStack, Input, NativeBaseProvider, Progress, ScrollView, Switch, Text, VStack } from 'native-base';
+import { Animated, AppRegistry, Dimensions, SafeAreaView, StyleSheet, View } from 'react-native';
+import { useEffect, useState } from 'react';
+import AppContextProvider from './components/appProvider';
+import Disclaimer from './components/disclaimer';
+import Main from './components/main';
+
 
 export default function App() {
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <AppContextProvider>
+      <SafeAreaView>
+        <Animated.View>
+          <Main />
+        </Animated.View>
+      </SafeAreaView>
+      <Disclaimer />
+    </AppContextProvider>
   );
 }
 
